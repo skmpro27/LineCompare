@@ -10,17 +10,27 @@ public class LineCompr {
 }
 	public static void main(String args[]) {
 		System.out.println("Welcome to Line Comparison Computation Program");
-		double length;
+		Double length[] = new Double[2];
+		int x1, y1, x2, y2;
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter cordinates of start point: ");
-		int x1 = sc.nextInt();
-		int y1 = sc.nextInt();
-		System.out.println("Enter cordinates of end point: ");
-		int x2 = sc.nextInt();
-		int y2 = sc.nextInt();
+		for (int i=0; i < 2; i++)
+		{
+			System.out.println("Enter cordinates for Line" + (i+1));
+			System.out.println("Start points: ");
+			x1 = sc.nextInt();
+			y1 = sc.nextInt();
+			System.out.println("End points: ");
+			x2 = sc.nextInt();
+			y2 = sc.nextInt();
 
-		length = lengthCalcu(x1, y1, x2, y2);
-		System.out.println("Length of the line: " + length);
+			length[i] = lengthCalcu(x1, y1, x2, y2);
+		}
+
+		if (length[0].equals(length[1]))
+			System.out.println("Lines are equal");
+		else
+			System.out.println("Lines are not equal");
+
 	}
 }
